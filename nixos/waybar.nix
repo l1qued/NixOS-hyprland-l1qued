@@ -6,7 +6,6 @@
     pavucontrol
   ];
 
-  # Создаем конфиг файл для Waybar
   environment.etc."xdg/waybar/config".text = ''
     {
       "height": 30,
@@ -81,7 +80,6 @@
     }
   '';
 
-  # Создаем файл стилей
   environment.etc."xdg/waybar/style.css".text = ''
     * {
       border: none;
