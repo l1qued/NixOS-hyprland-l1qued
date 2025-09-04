@@ -66,6 +66,12 @@
     xwayland.enable = true;
   };
 
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Разрешить удаленную игру
+    dedicatedServer.openFirewall = true; # Разрешить серверы
+  };
+
   environment.systemPackages = with pkgs; [
     bibata-cursors
 
@@ -77,12 +83,15 @@
     xdg-desktop-portal
 
     jq
+    mpv
     git
     wget
     neohtop
     fastfetch
     pkgs.kitty
     xfce.thunar
+
+    hyprlock
     hyprshot
 
     bluez
@@ -91,8 +100,10 @@
     
     firefox
     rustdesk
+    obs-studio
 
     telegram-desktop
+    steam
 
     swww
     wofi
@@ -107,6 +118,8 @@
     enableDefaultPackages = true;
     enableGhostscriptFonts = true;
   };
+
+  services.flatpak.enable = true;
 
   services.xserver.displayManager.defaultSession = "hyprland";
 
